@@ -7,5 +7,6 @@ export class CartService {
   addToCart(product: Product) {
     const current = this.cartItems.value;
     this.cartItems.next([...current, product]);
+    items$ = this.cartItems.asObservable();
   }
 }
