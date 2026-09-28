@@ -1,5 +1,5 @@
 <div *ngFor="let p of cartItems">
   <div>{{ p.name }} - {{ p.price }}</div>
 </div>
-<div>{{cartItems.reduce((sum,p) => sum + p.price, 0)}}</div>
+<div>Total : {{ getTotal() }}</div>
 <div *ngIf="cartItems.length === 0">Cart is Empty</div>
