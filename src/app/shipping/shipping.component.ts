@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-shipping',
@@ -7,4 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   templateUrl: './shipping.component.html',
   styleUrl: './shipping.component.css',
 })
-export class ShippingComponent {}
+export class ShippingComponent {
+  shippingForm = new FormGroup({
+    name: new FormControl(''),
+  });
+}
