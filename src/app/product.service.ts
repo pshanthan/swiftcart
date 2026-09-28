@@ -1,10 +1,10 @@
 import { Inject, Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { product } from './models/product';
+import { Product } from './models/product';
 
 @Injectable({ providedIn: 'root' })
-class Service {
-  getProduct(): Observable<product[]> {
+export class Service {
+  getProduct(): Observable<Product[]> {
     return of([{ id: 1, name: 'shirt', price: 200 }]);
   }
 }
