@@ -22,4 +22,7 @@ export class ShippingComponent {
       Validators.pattern('^[0-9]{5}$'),
     ]),
   });
+  onSubmit() {
+    console.log(this.shippingForm.value);
+  }
 }
