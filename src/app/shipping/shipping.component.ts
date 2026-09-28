@@ -15,5 +15,8 @@ import {
 export class ShippingComponent {
   shippingForm = new FormGroup({
     name: new FormControl('', Validators.required),
+    address: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+    zip: new FormControl('', Validators.pattern('^[0-9]{5}$')),
   });
 }
