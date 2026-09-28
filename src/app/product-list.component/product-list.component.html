@@ -2,12 +2,9 @@
   <div>{{ p.id }}</div>
   <div>{{ p.name }}</div>
   <div>{{ p.price }}</div>
+  <button (click)="wishList(p)">Add To Wishlist</button>
   <div>
     <button (click)="addToCart(p)">Add To Cart</button>
   </div>
 </div>
-<div *ngFor="let p of wishList">
-  <div>{{ p.id }}</div>
-  <div>{{ p.name }}</div>
-  <div>{{ p.price }}</div>
-</div>
+<div>WishList Count : {{ wishListCount }}</div>
