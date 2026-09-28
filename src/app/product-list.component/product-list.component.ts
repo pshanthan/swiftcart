@@ -1,8 +1,14 @@
-import { OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ProductService } from "../product.service";
 import { Product } from "../models/product";
 import { CommonModule } from "@angular/common";
 
+@Component({
+  selector: 'app-product-list',
+  imports: [],
+  templateUrl: './product-list.component.html',
+  styleUrl: './product-list.component.css'
+})
 
 export class productList implements OnInit{
     constructor(public productService : ProductService){}
