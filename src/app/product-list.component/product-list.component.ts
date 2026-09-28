@@ -10,15 +10,13 @@ import { CommonModule } from "@angular/common";
   styleUrl: './product-list.component.css'
 })
 
-export class productList implements OnInit{
+export class productListComponent implements OnInit{
     constructor(public productService : ProductService){}
     products : Product[] = [];
     ngOnInit(){
         this.getProducts();
     }
     getProducts(){
-        this.productService.getProduct(){
-
-        }
+        this.productService.getProduct().subscribe(products => { this.products = products }){}
     }
 }
