@@ -3,6 +3,7 @@ import { ProductService } from '../product.service';
 import { Product } from '../models/product';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../cart.service';
+import { WishlistService } from '../wishlist.service';
 
 @Component({
   selector: 'app-product-list',
@@ -14,6 +15,7 @@ export class productListComponent implements OnInit {
   constructor(
     public productService: ProductService,
     public cartService: CartService,
+    public wishListService: WishlistService,
   ) {}
   products: Product[] = [];
   ngOnInit() {
@@ -26,5 +28,8 @@ export class productListComponent implements OnInit {
   }
   addToCart(product: Product) {
     this.cartService.addToCart(product);
+  }
+  wishList(product: Product) {
+    this.wishListService.addToWishList(product);
   }
 }
