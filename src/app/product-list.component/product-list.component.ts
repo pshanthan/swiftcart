@@ -3,6 +3,7 @@ import { ProductService } from '../product.service';
 import { Product } from '../models/product';
 import { CommonModule } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
+import { CartService } from '../cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -11,7 +12,10 @@ import { BehaviorSubject } from 'rxjs';
   styleUrl: './product-list.component.css',
 })
 export class productListComponent implements OnInit {
-  constructor(public productService: ProductService) {}
+  constructor(
+    public productService: ProductService,
+    public cartService: CartService,
+  ) {}
   products: Product[] = [];
   ngOnInit() {
     this.getProducts();
@@ -20,5 +24,8 @@ export class productListComponent implements OnInit {
     this.productService.getProduct().subscribe((products) => {
       this.products = products;
     });
+  }
+  addToCart(product: Product) {
+    this.cartService.addToCart(product);
   }
 }
