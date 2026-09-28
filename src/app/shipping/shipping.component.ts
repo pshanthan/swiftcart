@@ -17,6 +17,9 @@ export class ShippingComponent {
     name: new FormControl('', Validators.required),
     address: new FormControl('', Validators.required),
     city: new FormControl('', Validators.required),
-    zip: new FormControl('', Validators.pattern('^[0-9]{5}$')),
+    zip: new FormControl('', [
+      Validators.required,
+      Validators.pattern('^[0-9]{5}$'),
+    ]),
   });
 }
