@@ -4,4 +4,8 @@ import { Product } from './models/product';
 @Injectable({ providedIn: 'root' })
 export class CartService {
   private cartItems = new BehaviorSubject<Product[]>([]);
+  addToCart(product: Product) {
+    const current = this.cartItems.value;
+    this.cartItems.next([...current, product]);
+  }
 }
