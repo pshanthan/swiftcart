@@ -18,8 +18,12 @@ export class productListComponent implements OnInit {
     public wishListService: WishlistService,
   ) {}
   products: Product[] = [];
+  wishListCount: number = 0;
   ngOnInit() {
     this.getProducts();
+    this.wishListService.currentWishList$.subscribe(
+      (items) => (this.wishListCount = items.length),
+    );
   }
   getProducts() {
     this.productService.getProduct().subscribe((products) => {
